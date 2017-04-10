@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SDKTest")]
+[assembly: AssemblyTitle("sdk_csharp_sample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("SDKTest")]
+[assembly: AssemblyProduct("sdk_csharp_sample")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("48ac141b-74ba-4cf6-abd3-2fbd8c51805a")]
+[assembly: Guid("8e0945a6-1692-493c-8964-f66bca85aa4f")]
 
 // Version information for an assembly consists of the following four values:
 //
