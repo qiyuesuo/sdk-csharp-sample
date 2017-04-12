@@ -17,7 +17,7 @@ namespace sdk_csharp_sample
 
             //远程签署
             // RemoteSign remoteSign = new RemoteSign(client);
-            //remoteSign.Process();
+            // remoteSign.Process();
 
             //标准签署
             StandardSign standardSign = new StandardSign(client);

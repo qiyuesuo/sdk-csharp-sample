@@ -5,3 +5,10 @@ C:\Users\codice\sdk_csharp_sample\sdk_csharp_sample\bin\Debug\PdfTool.dll
 C:\Users\codice\sdk_csharp_sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csprojResolveAssemblyReference.cache
 C:\Users\codice\sdk_csharp_sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.exe
 C:\Users\codice\sdk_csharp_sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.exe
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\sdk_csharp_sample.exe
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\sdk_csharp_sample.pdb
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\QiyuesuoSDK.dll
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\PdfTool.dll
+C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csprojResolveAssemblyReference.cache

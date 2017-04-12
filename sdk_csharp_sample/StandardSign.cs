@@ -26,6 +26,9 @@ namespace sdk_csharp_sample
                 //根据模板创建合同
                 string documentId = CreateByTemplate();
 
+                //根据html创建合同
+                documentId = CreateByHtml();
+
                 //根据文件创建合同
                 documentId = CreateByFile();
 
@@ -90,6 +93,31 @@ namespace sdk_csharp_sample
             // documentid = signService.Create(fileInput, "远程签授权协议书",receivers,"2287912843499439826");/文件存放于指定合同分类，合同分类在云平台进行维护
             fileInput.Close();
             Console.WriteLine("根据文件创建合同成功，文档ID:{0}", documentid);
+            return documentid;
+        }
+
+        private string CreateByHtml()
+        {
+            string documentid = "";
+            //根据html创建合同,不带有效时间
+            string html = "<html><body><p>title</p><p>在线第三方电子合同平台。企业及个人用户可通过本平台与签约方快速完成合同签署，安全、合法、有效。</p></body></html>";
+
+            //设置接收人，名称、联系方式必填
+            Receiver receiver = new Receiver();
+            receiver.name = "丁武";
+            receiver.mobile = "13262898649";
+            receiver.type = AccountType.PERSONAL;
+            receiver.authLevel = AuthenticationLevel.BASIC;
+            receiver.ordinal = 1;
+
+            List<Receiver> receivers = new List<Receiver>();
+            receivers.Add(receiver);
+
+            //根据html创建合同,带有效时间
+            documentid = signService.Create(html, receivers, "html测试合同");
+            // documentid = signService.Create(html, receivers, "html测试合同","2287912843499439826");/文件存放于指定合同分类，合同分类在云平台进行维护
+            Console.WriteLine("根据html创建合同成功，文档ID:{0}", documentid);
+
             return documentid;
         }
 

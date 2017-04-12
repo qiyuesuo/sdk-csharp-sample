@@ -29,6 +29,9 @@ namespace sdk_csharp_sample
                 //根据模板创建合同
                 string documentId = CreateByTemplate();
 
+                //根据html创建合同
+                documentId = CreateByHtml();
+
                 //根据本地PDF文件创建合同
                 documentId = CreateByFile();
 
@@ -86,6 +89,19 @@ namespace sdk_csharp_sample
             documentid = signService.Create(template, "远程模板测试合同");//有效期默认为30天，到期未完成签署，自动作废
             // documentid = signService.Create(template, "远程模板测试合同", DateTime.Now.AddDays(7));//7天后未完成签署，自动作废
             Console.WriteLine("根据模板创建合同成功，文档ID:{0}", documentid);
+            return documentid;
+        }
+
+        private string CreateByHtml() {
+            string documentid = "";
+            //根据html创建合同,不带有效时间
+            string html = "<html><body><p>title</p><p>在线第三方电子合同平台。企业及个人用户可通过本平台与签约方快速完成合同签署，安全、合法、有效。</p></body></html>";
+            //documentid = signService.Create(html, "测试html创建合同");
+
+            //根据html创建合同,带有效时间
+            documentid = signService.Create(html, "测试html创建合同", DateTime.Now.AddDays(7));
+            Console.WriteLine("根据html创建合同成功，文档ID:{0}", documentid);
+        
             return documentid;
         }
 
