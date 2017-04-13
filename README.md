@@ -25,11 +25,6 @@ Usage
 
 详情请参考： [RemoteSign.cs](https://github.com/qiyuesuo/sdk-csharp-sample/sdk_csharp_sample/RemoteSign.cs).
 
-#### 标准签
-文件无需上传到契约锁云平台，对接方通过接口签署，接收方登录契约锁云平台签署。
-
-详情请参考： [StandardSign.cs](https://github.com/qiyuesuo/sdk-csharp-sample/sdk_csharp_sample/StandardSign.cs).
-
 Notes
 =======
 示例代码中的参数均为测试环境参数，实际运行时需要将相关参数修改为生产环境参数，或沙箱测试环境参数。
