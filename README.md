@@ -23,7 +23,7 @@ Usage
 #### 远程签
 将文件上传的云平台进行签署，或者使用云平台的模板进行签署。
 
-详情请参考： [RemoteSign.cs](https://github.com/qiyuesuo/sdk_csharp_sample/RemoteSign.cs).
+详情请参考： [RemoteSign.cs](https://github.com/qiyuesuo/sdk-csharp-sample/blob/master/sdk_csharp_sample/RemoteSign.cs)
 
 Notes
 =======
