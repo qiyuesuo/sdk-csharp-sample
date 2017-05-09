@@ -69,7 +69,7 @@ namespace sdk_csharp_sample
             receivers.Add(receiver);
 
             //根据模板创建合同,合同存放于默认合同分类中，合同分类在云平台上维护
-            string documentId = signService.Create("2287912848399175726", parameters, "标准模板测试合同", receivers);
+            string documentId = signService.Create("2287912848399175726", parameters, "标准模板测试合同", receivers,ReceiveType.SEQ);
             //documentId = signService.Create("2287912848399175726", parameters, "标准模板测试合同", receivers, "2287912843499439826");//文件存放于指定合同分类，合同分类在云平台进行维护
             Console.WriteLine("根据模板创建合同成功，文档ID:{0}", documentId);
             return documentId;
@@ -89,7 +89,7 @@ namespace sdk_csharp_sample
             List<Receiver> receivers = new List<Receiver>();
             receivers.Add(receiver);
 
-            string documentid = signService.Create(fileInput, "远程签授权协议书", receivers);//合同存放于默认合同分类中，合同分类在云平台上【参数模板】维护
+            string documentid = signService.Create(fileInput, "远程签授权协议书", receivers,ReceiveType.SEQ);//合同存放于默认合同分类中，合同分类在云平台上【参数模板】维护
             // documentid = signService.Create(fileInput, "远程签授权协议书",receivers,"2287912843499439826");/文件存放于指定合同分类，合同分类在云平台进行维护
             fileInput.Close();
             Console.WriteLine("根据文件创建合同成功，文档ID:{0}", documentid);
@@ -114,7 +114,7 @@ namespace sdk_csharp_sample
             receivers.Add(receiver);
 
             //根据html创建合同,带有效时间
-            documentid = signService.Create(html, receivers, "html测试合同");
+            documentid = signService.Create(html, receivers,ReceiveType.SEQ, "html测试合同");
             // documentid = signService.Create(html, receivers, "html测试合同","2287912843499439826");/文件存放于指定合同分类，合同分类在云平台进行维护
             Console.WriteLine("根据html创建合同成功，文档ID:{0}", documentid);
 
