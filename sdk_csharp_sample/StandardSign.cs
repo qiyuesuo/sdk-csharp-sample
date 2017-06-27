@@ -24,25 +24,28 @@ namespace sdk_csharp_sample
             try
             {
                 //根据模板创建合同
-                string documentId = CreateByTemplate();
+                //  string documentId = CreateByTemplate();
 
                 //根据html创建合同
-                documentId = CreateByHtml();
+                string documentId = CreateByHtml();
 
                 //根据文件创建合同
-                documentId = CreateByFile();
+                //  string documentId = CreateByFile();
 
-                //对接平台签署
-                SignByPlatform(documentId);
+                //如需要法人签署
+                //SignByLegalPerson(documentId);
 
-                //查询合同详情
-                Detail(documentId);
+               //对接平台签署
+               // SignByPlatform(documentId);
 
-                //下载合同文档
-                DownloadDoc(documentId);
+               //查询合同详情
+               //  Detail(documentId);
+
+               //下载合同文档
+               DownloadDoc(documentId);
 
                 //下载合同
-                Download(documentId);
+               // Download(documentId);
             }
             catch (Exception e) {
                 Console.WriteLine("标准签署模式异常，错误信息{0}", e.Message);
@@ -68,6 +71,13 @@ namespace sdk_csharp_sample
             List<Receiver> receivers = new List<Receiver>();
             receivers.Add(receiver);
 
+            //需要本方签署，则将本方加入接收者列表
+            Receiver platform = new Receiver();
+            platform.type = AccountType.PLATFORM;
+            platform.legalPersonRequired = true; // 需要法人签署，设置为true
+            platform.ordinal = 0;
+            receivers.Add(platform);
+
             //根据模板创建合同,合同存放于默认合同分类中，合同分类在云平台上维护
             string documentId = signService.Create("2287912848399175726", parameters, "标准模板测试合同", receivers,ReceiveType.SEQ);
             //documentId = signService.Create("2287912848399175726", parameters, "标准模板测试合同", receivers, "2287912843499439826");//文件存放于指定合同分类，合同分类在云平台进行维护
@@ -76,7 +86,7 @@ namespace sdk_csharp_sample
         }
 
         private string CreateByFile() {
-            FileStream fileInput = new FileStream("D://authorization.pdf", FileMode.Open);
+            FileStream fileInput = new FileStream("D://NotSign.pdf", FileMode.Open);
 
             //设置接收人，名称、联系方式必填
             Receiver receiver = new Receiver();
@@ -86,7 +96,12 @@ namespace sdk_csharp_sample
             receiver.authLevel = AuthenticationLevel.BASIC;
             receiver.ordinal = 1;
 
+            Receiver plateform = new Receiver();
+            plateform.type = AccountType.PLATFORM;
+            plateform.legalPersonRequired = true; // 需要法人签署，设置为true
+            plateform.ordinal = 0;
             List<Receiver> receivers = new List<Receiver>();
+            receivers.Add(plateform);
             receivers.Add(receiver);
 
             string documentid = signService.Create(fileInput, "远程签授权协议书", receivers,ReceiveType.SEQ);//合同存放于默认合同分类中，合同分类在云平台上【参数模板】维护
@@ -113,6 +128,13 @@ namespace sdk_csharp_sample
             List<Receiver> receivers = new List<Receiver>();
             receivers.Add(receiver);
 
+            //需要本方签署，则将本方加入接收者列表
+            Receiver platform = new Receiver();
+            platform.type = AccountType.PLATFORM;
+            platform.legalPersonRequired = true; // 需要法人签署，设置为true
+            platform.ordinal = 0;
+            receivers.Add(platform);
+
             //根据html创建合同,带有效时间
             documentid = signService.Create(html, receivers,ReceiveType.SEQ, "html测试合同");
             // documentid = signService.Create(html, receivers, "html测试合同","2287912843499439826");/文件存放于指定合同分类，合同分类在云平台进行维护
@@ -121,11 +143,19 @@ namespace sdk_csharp_sample
             return documentid;
         }
 
+        private void SignByLegalPerson(string documentId) {
+            Stamper stamper = new Stamper(1, 0.5f, 0.5f);//根据坐标比确定位置
+            //Stamper stamper = new Stamper("法人签署：", 0.1f, 0f);//根据关键字确定位置
+
+            signService.LegalPersonSign(documentId, stamper);
+            Console.WriteLine("法人签署成功！");
+        }
+
         private void SignByPlatform(string documentId) {
             Stamper stamper = new Stamper(1,0.5f,0.5f);//根据坐标比确定位置
             //Stamper stamper = new Stamper("公章：", 0.1f, 0f);//根据关键字确定位置
             //签署对接方公章，公章在云平台上进行维护
-            signService.Sign(documentId, "2208938212208934912", stamper);
+            signService.Sign(documentId, "2274745036522389504", stamper,true);
             Console.WriteLine("平台签署成功！");
         }
 

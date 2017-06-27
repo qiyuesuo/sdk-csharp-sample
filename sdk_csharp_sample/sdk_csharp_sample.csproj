@@ -32,7 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="QiyuesuoSDK">
+    <Reference Include="QiyuesuoSDK, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\QiyuesuoSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
