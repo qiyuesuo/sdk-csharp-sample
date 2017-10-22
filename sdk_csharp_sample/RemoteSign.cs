@@ -157,13 +157,13 @@ namespace sdk_csharp_sample
             person.paperType = PaperType.IDCARD;
 
             //个人用户签署页面之不可见签名 
-            string personSignUnvisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, person, "https://www.baidu.com/");
+            string personSignUnvisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, person, "https://www.baidu.com/",null);
             Console.WriteLine("个人用户签署页面之可见签名 url：{0}", personSignUnvisibleUrl);
             //个人用户签署页面之可见签名
             //生成个人印章数据，用户可自定义签名图片
             string personSealData = sealService.GenerateSeal(person);// 生成个人印章数据，用户可自定义签名图片
             Stamper personSignUrlStamper = new Stamper(1, 0.2f, 0.2f);
-            string personSignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, person, personSealData, personSignUrlStamper, "https://www.baidu.com/");
+            string personSignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, person, personSealData, personSignUrlStamper, "https://www.baidu.com/",null);
             Console.WriteLine("个人用户签署页面之可见签名 url：{0}", personSignVisibleUrl);
         }
 
@@ -173,13 +173,13 @@ namespace sdk_csharp_sample
             companySigner.registerNo="12323432452";
             companySigner.mobile="18701559988";//SignType.SIGNWITHPIN时必填
             //企业用户签署页面之不可见签名 
-            string companySignUnvisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, companySigner, "https://www.baidu.com/");
+            string companySignUnvisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, companySigner, "https://www.baidu.com/",null);
             Console.WriteLine("企业用户签署页面之不可见签名url：{0}", companySignUnvisibleUrl);
             //企业用户签署页面之可见签名 
             // 生成企业印章数据，用户可自定义印章图片
             string companySealDate = sealService.GenerateSeal(companySigner);
             Stamper companySignUrlStamper = new Stamper(1, 0.1f, 0.5f);
-            string companySignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, companySigner, companySealDate, companySignUrlStamper, "https://www.baidu.com/");
+            string companySignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, companySigner, companySealDate, companySignUrlStamper, "https://www.baidu.com/",null);
             Console.WriteLine("企业用户签署页面之可见签名url：{0}", companySignVisibleUrl);
         }
 
