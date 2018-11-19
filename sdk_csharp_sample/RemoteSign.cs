@@ -1,7 +1,6 @@
 ﻿using QiyuesuoSDK.Api;
 using QiyuesuoSDK.Bean;
 using QiyuesuoSDK.Impl;
-using QiyuesuoSDK.Template;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,40 +26,40 @@ namespace sdk_csharp_sample
             try
             {
                 //根据模板创建合同
-                string documentId = CreateByTemplate();
+             //   string documentId = CreateByTemplate();
 
                 //根据html创建合同
-                documentId = CreateByHtml();
+             //   documentId = CreateByHtml();
 
                 //根据本地PDF文件创建合同
-                documentId = CreateByFile();
+                string documentId = CreateByFile();
 
                 //对接平台方签署
                 SignByPlatform(documentId);
 
                 //平台个人用户静默签署
-                SignByPerson(documentId);
+             //   SignByPerson(documentId);
 
                 //平台企业用户静默签署
-                SignByCompany(documentId);
+             //   SignByCompany(documentId);
 
                 //平台个人用户签署界面
-                GetPersonSignUrl(documentId);
+            //    GetPersonSignUrl(documentId);
 
                 //平台企业用户签署界面
-                GetCompanySignUrl(documentId);
+            //    GetCompanySignUrl(documentId);
 
                 //封存合同
-                Complete(documentId);
+           //     Complete(documentId);
 
                 //合同查看界面
                 GetViewUrl(documentId);
 
                 //查询合同详情
-                Detail(documentId);
+           //     Detail(documentId);
 
                 //下载合同
-                Download(documentId);
+          //      Download(documentId);
             }
             catch (Exception e)
             {
@@ -71,7 +70,7 @@ namespace sdk_csharp_sample
         }
 
         private string CreateByFile() {
-            FileStream fileInput = new FileStream("D://authorization.pdf", FileMode.Open);
+            FileStream fileInput = new FileStream("D://023000874//融资服务协议.pdf", FileMode.Open);
             string documentid = signService.Create(fileInput, "远程签授权协议书");//有效期默认为30天，到期未完成签署，自动作废
            // documentid = signService.Create(fileInput, "远程签授权协议书", DateTime.Now.AddDays(7));//7天后未完成签署，自动作废
             fileInput.Close();
@@ -107,7 +106,7 @@ namespace sdk_csharp_sample
 
         private void SignByPlatform(string documentId) {
             // 平台签署,带签名外观
-            string sealId = "2208938212208934912";// 平台印章，在契约锁云平台维护
+            string sealId = "2292201504040435826";// 平台印章，在契约锁云平台维护
             Stamper stamper = new Stamper(1, 0.5f, 0.5f);// 签名位置，根据坐标比确定位置
             //Stamper stamper = new Stamper("公章：", 0, 0);// 签名位置，根据关键字定位
             //remoteSignService.Sign(documentId);//无签名外观
@@ -163,7 +162,10 @@ namespace sdk_csharp_sample
             //生成个人印章数据，用户可自定义签名图片
             string personSealData = sealService.GenerateSeal(person);// 生成个人印章数据，用户可自定义签名图片
             Stamper personSignUrlStamper = new Stamper(1, 0.2f, 0.2f);
-            string personSignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, person, personSealData, personSignUrlStamper, "https://www.baidu.com/",null);
+
+            List<Stamper> stampers = new List<Stamper>();
+            stampers.Add(personSignUrlStamper);
+            string personSignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, person, personSealData, stampers, "https://www.baidu.com/",null);
             Console.WriteLine("个人用户签署页面之可见签名 url：{0}", personSignVisibleUrl);
         }
 
@@ -179,7 +181,11 @@ namespace sdk_csharp_sample
             // 生成企业印章数据，用户可自定义印章图片
             string companySealDate = sealService.GenerateSeal(companySigner);
             Stamper companySignUrlStamper = new Stamper(1, 0.1f, 0.5f);
-            string companySignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, companySigner, companySealDate, companySignUrlStamper, "https://www.baidu.com/",null);
+
+            List<Stamper> stampers = new List<Stamper>();
+            stampers.Add(companySignUrlStamper);
+
+            string companySignVisibleUrl = signService.SignUrl(documentId, SignType.SIGNWITHPIN, companySigner, companySealDate, stampers, "https://www.baidu.com/",null);
             Console.WriteLine("企业用户签署页面之可见签名url：{0}", companySignVisibleUrl);
         }
 
