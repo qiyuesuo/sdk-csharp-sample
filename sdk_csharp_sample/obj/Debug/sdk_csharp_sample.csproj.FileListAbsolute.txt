@@ -7,3 +7,14 @@ C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\PdfTool.dll
 C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csprojResolveAssemblyReference.cache
 C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.exe
 C:\Users\codice\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\sdk_csharp_sample.exe
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\sdk_csharp_sample.pdb
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\EVS_SDK.dll
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\Newtonsoft.Json.dll
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\QiyuesuoSDK.dll
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\PdfTool.dll
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csprojAssemblyReference.cache
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csproj.CoreCompileInputs.cache
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csproj.CopyComplete
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.exe
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb

@@ -28,10 +28,10 @@ namespace sdk_csharp_sample
                 //  long contractId = CreateByFile();
 
                 //根据模板创建合同
-                InitResponse initResponse = CreateByTemplate();
+                //InitResponse initResponse = CreateByTemplate();
 
                 //根据html创建合同
-                // long contractId = CreateByHtml();
+                InitResponse initResponse = CreateByHtml();
 
                 //根据文件增加文档
                 // long documentId1 = AddDocumentByFile(contractId);
@@ -44,8 +44,8 @@ namespace sdk_csharp_sample
 
                 //合同发起
                 List<long> documents = new List<long>();
-                contractId = initResponse.contractId.Value;
-                documents.Add(initResponse.documentId.Value);
+               contractId = initResponse.contractId.Value;
+               documents.Add(initResponse.documentId.Value);
                // documents.Add(documentId1);
                // documents.Add(documentId2);
                // documents.Add(documentId3);

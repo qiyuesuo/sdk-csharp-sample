@@ -18,12 +18,6 @@ namespace sdk_csharp_sample
         }
 
         public void Process() {
-            //创建bucket
-            storageService.CreateBucket("新建bucket");
-
-            //删除bucket
-            storageService.DeleteBucket("新建bucket");
-
             //存证文件
             StorageFile();
 
