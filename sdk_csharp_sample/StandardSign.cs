@@ -270,7 +270,6 @@ namespace sdk_csharp_sample
             StandardStamper pStamper = new StandardStamper();
             pStamper.documentId = documentIds[0];
             pStamper.page = 1;
-            pStamper.keyword = null;
             pStamper.offsetX = 0.64;
             pStamper.offsetY = 0.105; 
             pStamper.type = StandardSignType.PERSONAL;
@@ -278,22 +277,20 @@ namespace sdk_csharp_sample
             StandardStamper ptStamper = new StandardStamper();
             ptStamper.documentId = documentIds[0];
             ptStamper.page = 1;
-            ptStamper.keyword = null;
             ptStamper.offsetX = 0.655;
             ptStamper.offsetY = 0.058;
             ptStamper.type = StandardSignType.PERSONAL_TIMESTAMP;
 
             StandardStamper pStamper_d = new StandardStamper();
             pStamper_d.documentId = documentIds[0];
-            pStamper_d.page = 2;
-            pStamper_d.keyword = null;
+            pStamper_d.page = 1;
             pStamper_d.offsetX = 0.658;
             pStamper_d.offsetY = 0.09;
             pStamper_d.type = StandardSignType.PERSONAL;
 
             StandardStamper ptStamper_d = new StandardStamper();
             ptStamper_d.documentId = documentIds[0];
-            ptStamper_d.page = 2;
+            ptStamper_d.page = 1;
             ptStamper_d.keyword = null;
             ptStamper_d.offsetX = 0.662;
             ptStamper_d.offsetY = 0.05;
@@ -306,8 +303,8 @@ namespace sdk_csharp_sample
             personalStampers.Add(ptStamper_d);
 
             Receiver receiver = new Receiver();
-            receiver.name = "丁祥春";
-            receiver.mobile = "13262598398";
+            receiver.name = "张忱昊";
+            receiver.mobile = "17621699044";
             receiver.type = AccountType.PERSONAL;
             receiver.authLevel = AuthenticationLevel.BASIC;
             receiver.ordinal = 1;
@@ -363,18 +360,18 @@ namespace sdk_csharp_sample
             SignRequest request = new SignRequest();
             request.acrossPage = true;
             request.contractId = contractId;
-            request.sealId = 2372592386585493570;
 
-            /* List<StandardStamper> stampers = new List<StandardStamper>();
-             StandardStamper stamper = new StandardStamper();
+             List<StandardSignStamper> stampers = new List<StandardSignStamper>();
+             StandardSignStamper stamper = new StandardSignStamper();
              stamper.documentId = documents[0];
              stamper.page = 1;
              stamper.offsetX = 0.1;
              stamper.offsetY = 0.2;
              stamper.type = StandardSignType.SEAL;
-             stampers.Add(stamper);*/
+             stamper.sealId = 1234567890;
+             stampers.Add(stamper);
 
-            request.stampers = new List<StandardStamper>();
+            request.stampers = stampers;
 
             try
             {

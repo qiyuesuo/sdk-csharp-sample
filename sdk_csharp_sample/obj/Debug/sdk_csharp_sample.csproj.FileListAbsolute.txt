@@ -18,3 +18,5 @@ D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sampl
 D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csproj.CopyComplete
 D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.exe
 D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\QRCoder.dll
+D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\UnityEngine.dll

@@ -21,13 +21,15 @@ namespace sdk_csharp_sample
             //存证文件
             StorageFile();
 
+            //下载存证文件
+            DownloadFile("123123");
         }
 
         public void StorageFile() {
             Stream stream = null;
             try
             {
-                stream = new FileStream("D://1.pdf", FileMode.Open);
+                stream = new FileStream("C:\\Users\\Administrator\\Desktop\\aa.pdf", FileMode.Open);
                 string fid = storageService.Upload(stream, "劳动合同", "pdf", false);
                 Console.WriteLine("文件存证成功！文件ID:" + fid);
             }
@@ -39,6 +41,14 @@ namespace sdk_csharp_sample
                 stream.Close();
             }
             
+        }
+
+        public void DownloadFile(string fid)
+        {
+            Stream downloadFile = new FileStream("downlowd.pdf", FileMode.CreateNew);
+            storageService.Download(fid, ref downloadFile);
+            downloadFile.Close();
+            Console.WriteLine("文件存证下载成功！文件ID:" + fid);
         }
     }
 }

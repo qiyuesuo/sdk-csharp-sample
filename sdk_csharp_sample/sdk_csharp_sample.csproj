@@ -40,9 +40,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="QiyuesuoSDK, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="PdfTool, Version=1.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\PdfTool.dll</HintPath>
+    </Reference>
+    <Reference Include="QiyuesuoSDK, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\QiyuesuoSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder">
+      <HintPath>Lib\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +57,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>Lib\UnityEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -58,6 +68,8 @@
     <Compile Include="LocalSign.cs" />
     <Compile Include="StandardSign.cs" />
     <Compile Include="Storage.cs" />
+    <Compile Include="CompanyAuth.cs" />
+    <Compile Include="PersonalAuth.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
