@@ -194,6 +194,113 @@ namespace sdk_csharp_sample
             Console.WriteLine("浏览合同URL：{0}", viewUrl);
         }
 
+
+        private void MutiSignByPlatform(string documentId)
+        {
+            PlatformMutiSignRequest mutiSignRequest = new PlatformMutiSignRequest();
+            List<RemoteStamper> remoteStampers = new List<RemoteStamper>();
+
+            RemoteStamper stamper1 = new RemoteStamper();
+            stamper1.documentId = 2560294199182234262;
+            stamper1.sealType = RemoteSealType.SEAL;
+            stamper1.sealId = 2553205357123998650;
+            stamper1.offsetX = 0.1;
+            stamper1.offsetY = 0.2;
+            stamper1.page = 1;
+            remoteStampers.Add(stamper1);
+
+            RemoteStamper stamper2 = new RemoteStamper();
+            stamper2.documentId = 2560294199182234262;
+            stamper2.sealType = RemoteSealType.TIMESTAMP;
+            stamper2.offsetX = 0.5;
+            stamper2.offsetY = 0.6;
+            stamper2.page = 1;
+            remoteStampers.Add(stamper2);
+
+            RemoteStamper stamper3 = new RemoteStamper();
+            stamper3.documentId = 2560294199182234262;
+            stamper3.sealType = RemoteSealType.ACROSS_PAGE;
+            stamper3.sealId = 2553205357123998650;
+            stamper3.offsetY = 0.2;
+            remoteStampers.Add(stamper3);
+
+            mutiSignRequest.stampers = remoteStampers;
+            signService.MutiSign(mutiSignRequest);
+        }
+
+
+        private void MutiSignByCompany(string documentId)
+        {
+            Company signCompany = new Company("签署公司名称");
+            CompanyMutiSignRequest mutiSignRequest = new CompanyMutiSignRequest(signCompany);
+
+            List<RemoteStamper> remoteStampers = new List<RemoteStamper>();
+
+            RemoteStamper stamper1 = new RemoteStamper();
+            stamper1.documentId = 2560294199182234262;
+            stamper1.sealType = RemoteSealType.SEAL;
+            stamper1.sealImageBase64 = "印章Base64图片编码";
+            stamper1.offsetX = 0.1;
+            stamper1.offsetY = 0.2;
+            stamper1.page = 1;
+            remoteStampers.Add(stamper1);
+
+            RemoteStamper stamper2 = new RemoteStamper();
+            stamper2.documentId = 2560294199182234262;
+            stamper2.sealType = RemoteSealType.TIMESTAMP;
+            stamper2.offsetX = 0.5;
+            stamper2.offsetY = 0.6;
+            stamper2.page = 1;
+            remoteStampers.Add(stamper2);
+
+            RemoteStamper stamper3 = new RemoteStamper();
+            stamper3.documentId = 2560294199182234262;
+            stamper3.sealType = RemoteSealType.ACROSS_PAGE;
+            stamper1.sealImageBase64 = "印章Base64图片编码";
+            stamper3.offsetY = 0.2;
+            remoteStampers.Add(stamper3);
+
+            mutiSignRequest.stampers = remoteStampers;
+            signService.MutiSign(mutiSignRequest);
+
+        }
+
+
+        private void MutiSignByPerson(string documentId)
+        {
+            Person signPerson= new Person("签署人名称");
+            PersonMutiSignRequest mutiSignRequest = new PersonMutiSignRequest(signPerson);
+
+            List<RemoteStamper> remoteStampers = new List<RemoteStamper>();
+
+            RemoteStamper stamper1 = new RemoteStamper();
+            stamper1.documentId = 2560294199182234262;
+            stamper1.sealType = RemoteSealType.SEAL;
+            stamper1.sealImageBase64 = "印章Base64图片编码";
+            stamper1.offsetX = 0.1;
+            stamper1.offsetY = 0.2;
+            stamper1.page = 1;
+            remoteStampers.Add(stamper1);
+
+            RemoteStamper stamper2 = new RemoteStamper();
+            stamper2.documentId = 2560294199182234262;
+            stamper2.sealType = RemoteSealType.TIMESTAMP;
+            stamper2.offsetX = 0.5;
+            stamper2.offsetY = 0.6;
+            stamper2.page = 1;
+            remoteStampers.Add(stamper2);
+
+            RemoteStamper stamper3 = new RemoteStamper();
+            stamper3.documentId = 2560294199182234262;
+            stamper3.sealType = RemoteSealType.ACROSS_PAGE;
+            stamper1.sealImageBase64 = "印章Base64图片编码";
+            stamper3.offsetY = 0.2;
+            remoteStampers.Add(stamper3);
+
+            mutiSignRequest.stampers = remoteStampers;
+            signService.MutiSign(mutiSignRequest);
+        }
+
         private void Complete(string documentId) {
             // 签署完成
             signService.Complete(documentId);

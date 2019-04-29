@@ -310,7 +310,27 @@ namespace sdk_csharp_sample
             receiver.ordinal = 1;
             receiver.stampers = personalStampers;//个人签署位置
 
+            List<AttachmentRequest> attachments = new List<AttachmentRequest>();
+
+            AttachmentRequest attachmentRequest1 = new AttachmentRequest();
+            attachmentRequest1.title = "附件名称";
+            attachmentRequest1.required = true;
+            attachmentRequest1.needSign = false;
+            attachments.Add(attachmentRequest1);
+
+            receiver.attachments = attachments;
+
             receivers.Add(receiver);
+
+            List<DocumentParam> documentParams = new List<DocumentParam>();
+
+            DocumentParam documentParam1 = new DocumentParam();
+            documentParam1.documentId = documentIds[0];
+            documentParam1.name = "参数名称";
+            documentParam1.value = "参数默认值";
+            documentParam1.receiverNo = 1;
+            documentParams.Add(documentParam1);
+
 
             SendRequest request = new SendRequest();
 
@@ -318,6 +338,7 @@ namespace sdk_csharp_sample
             request.categoryId = null;      //不指定业务分类
 
             request.receivers = receivers;
+            request.documentParams = documentParams;
             request.receiveType = ReceiveType.SEQ;//设置签署人顺序签署
             try
             {
