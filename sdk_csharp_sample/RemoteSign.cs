@@ -290,13 +290,6 @@ namespace sdk_csharp_sample
             stamper2.page = 1;
             remoteStampers.Add(stamper2);
 
-            RemoteStamper stamper3 = new RemoteStamper();
-            stamper3.documentId = 2560294199182234262;
-            stamper3.sealType = RemoteSealType.ACROSS_PAGE;
-            stamper1.sealImageBase64 = "印章Base64图片编码";
-            stamper3.offsetY = 0.2;
-            remoteStampers.Add(stamper3);
-
             mutiSignRequest.stampers = remoteStampers;
             signService.MutiSign(mutiSignRequest);
         }
