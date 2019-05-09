@@ -43,6 +43,7 @@ namespace sdk_csharp_sample
             personalAuth.username = "张大壮";
             personalAuth.idCardNo = "510108199002181211";
             personalAuth.bizId = "33333";
+            personalAuth.mode = AuthMode.DEFAULT;
             String url=personalAuthService.GetAuthUrl(personalAuth);
             Console.WriteLine("获取实名认证地址成功，地址：{0}",url);
             return url;

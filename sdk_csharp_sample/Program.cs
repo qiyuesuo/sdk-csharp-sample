@@ -11,8 +11,8 @@ namespace sdk_csharp_sample
         static void Main(string[] args)
         {
             string serviceUrl = "https://openapi.qiyuesuo.cn";//开放平台服务地址，测试环境：https://openapi.qiyuesuo.cn； 正式环境：https://openapi.qiyuesuo.com
-            string accessToken = "qAJ6biIGwp"; //对接平台标识，在契约锁云平台完成企业实名认证，并成功申请开放平台后获得；
-            string accessSeret = "iMFLfa2785eVP3IWcW6VGErhQqyZ7pgsI";//对接平台密码，在契约锁云平台完成企业实名认证，并成功申请开放平台后获得；
+            string accessToken = "qAJ6biXCwp"; //对接平台标识，在契约锁云平台完成企业实名认证，并成功申请开放平台后获得；
+            string accessSeret = "iMFLfa2785VCZXVP3rhQqy7pgsI";//对接平台密码，在契约锁云平台完成企业实名认证，并成功申请开放平台后获得；
             SDKClient client = new SDKClient(accessToken, accessSeret, serviceUrl);
 
             //远程签署
