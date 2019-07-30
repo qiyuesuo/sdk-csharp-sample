@@ -20,3 +20,16 @@ D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sampl
 D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb
 D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\QRCoder.dll
 D:\Project\sample\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\UnityEngine.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\sdk_csharp_sample.exe
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\sdk_csharp_sample.pdb
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\EVS_SDK.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\Newtonsoft.Json.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\PdfTool.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\QiyuesuoSDK.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\QRCoder.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\bin\Debug\UnityEngine.dll
+C:\project\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csprojAssemblyReference.cache
+C:\project\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csproj.CoreCompileInputs.cache
+C:\project\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.csproj.CopyComplete
+C:\project\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.exe
+C:\project\sdk-csharp-sample\sdk_csharp_sample\obj\Debug\sdk_csharp_sample.pdb

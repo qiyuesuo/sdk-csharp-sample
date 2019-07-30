@@ -1,4 +1,4 @@
-﻿using QiyuesuoSDK.Bean;
+using QiyuesuoSDK.Bean;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,9 +37,9 @@ namespace sdk_csharp_sample
             //companyAuth.Process();
 
             //文件存证
-            EVS_SDK.Bean.SDKClient evsClient = new EVS_SDK.Bean.SDKClient(accessToken, accessSeret, serviceUrl);
-            Storage storage = new Storage(evsClient);
-            storage.Process();
+            //EVS_SDK.Bean.SDKClient evsClient = new EVS_SDK.Bean.SDKClient(accessToken, accessSeret, serviceUrl);
+            //Storage storage = new Storage(evsClient);
+            //storage.Process();
 
         }
     }
