@@ -46,6 +46,16 @@ namespace sdk_csharp_sample_v2
             draftContract.Category = new Category("2584280095237849689");   //设置将要使用的业务分类配置
             draftContract.AddTemplateParam(new TemplateParam("接收方2", "发起方填参"));   //若业务分类配置了参数模板，进行发起方填参
             draftContract.AddTemplateParam(new TemplateParam("接收方1", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方3", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方4", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方5", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方6", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方7", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方8", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方9", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方10", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方11", "发起方填参2"));
+            draftContract.AddTemplateParam(new TemplateParam("接收方12", "发起方填参2"));
             //设置 合同接收方，该设置的合同接收方需要与业务分类配置的接收方流程一致
             Signatory companySignatory = new Signatory("COMPANY", new User("17621699044", "MOBILE"), 1);
             companySignatory.TenantName = "大头橙橙汁公司";

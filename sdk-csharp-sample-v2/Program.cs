@@ -6,8 +6,8 @@ namespace sdk_csharp_sample_v2
     {
         static void Main(string[] args)
         {
-            string accessSecret = "替换为您的开放平台App Secret";
-            string accessToken = "替换为您的开放平台App Token";
+            string accessSecret = "替换为开放平台申请的App Secret";
+            string accessToken = "替换为开放平台申请的App Token";
             string serverUrl = "https://openapi.qiyuesuo.cn";   //测试环境：https://openapi.qiyuesuo.cn ; 正式环境：https://openapi.qiyuesuo.com
 
             SDKClient client = new SDKClient(accessToken, accessSecret, serverUrl);
@@ -16,10 +16,10 @@ namespace sdk_csharp_sample_v2
             // 利用业务分类配置进行合同发送
             //SendByCategory example = new SendByCategory();
             //example.Process(client);
-
+            
             SendByCodeSetting example = new SendByCodeSetting();
             example.Process(client);
-
+            
 
         }
     }

@@ -23,9 +23,6 @@ namespace sdk_csharp_sample_v2
             //发起合同，并指定签署位置（可选）
             SdkResponse<Object> sendResult = this.Send(client, draft.Result, fileAddResult.Result.DocumentId, templateAddResult.Result.DocumentId);
             Console.WriteLine("发起合同成功");
-            //审批合同
-            this.Audit(client, draft.Result.Id);
-            Console.WriteLine("合同审批完成");
             //公司公章签署（若未指定位置，需指定位置签署）
             this.CompanySealSign(client, draft.Result.Id, fileAddResult.Result.DocumentId, templateAddResult.Result.DocumentId);
             Console.WriteLine("合同公章签署成功");
@@ -55,27 +52,22 @@ namespace sdk_csharp_sample_v2
             Signatory platformSignatory = new Signatory("COMPANY", new User("张忱昊", "17621699044", "MOBILE"), 1);
             platformSignatory.TenantName = "大头橙橙汁公司";//平台方公司名称
             //添加平台方签署流程，可根据需要调整
-            //目前平台方签署流程为：（1）员工审批 （2）法人章签署（3）公章签署
-            // 审批流程，并设置审批操作人
-            SignAction aduitAction = new SignAction("AUDIT", 1);
-            aduitAction.AddOperators(new User("17621699044", "MOBILE"));
-            platformSignatory.AddAction(aduitAction);
+            //目前平台方签署流程为： （1）公章签署（2）法人章签署
             // 公章签署流程，并设置签署公章ID
-            SignAction sealAction = new SignAction("COMPANY", 2);
+            SignAction sealAction = new SignAction("COMPANY", 1);
             sealAction.SealId = "2490828768980361630";
             platformSignatory.AddAction(sealAction);
             // 法人章签署流程
-            platformSignatory.AddAction(new SignAction("LP", 3));
+            platformSignatory.AddAction(new SignAction("LP", 2));
             contract.AddSignatory(platformSignatory);
 
             //添加个人签署方，并设置个人签署方需要上传的附件内容
             Signatory personalSignatory = new Signatory("PERSONAL", new User("邓茜茜", "15021504325", "MOBILE"), 2);
             personalSignatory.TenantName = "邓茜茜";//接收方名称
-            personalSignatory.AddAttachment(new Attachment("附件", true, false));//添加上传附件要求，并设置为必须上传
             contract.AddSignatory(personalSignatory);
 
             //设置合同基本信息
-            contract.ExpireTime = "2019-07-28 23:59:59";//设置合同过期时间，合同过期时间需要晚于发起时间
+            contract.ExpireTime = "2020-07-28 23:59:59";//设置合同过期时间，合同过期时间需要晚于发起时间
             contract.Send = false;  //合同不发起
             request.Contract = contract;
 
