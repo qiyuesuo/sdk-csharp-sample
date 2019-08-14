@@ -6,9 +6,9 @@ namespace sdk_csharp_sample_v2
     {
         static void Main(string[] args)
         {
-            string accessSecret = "替换为开放平台申请的App Secret";
-            string accessToken = "替换为开放平台申请的App Token";
-            string serverUrl = "https://openapi.qiyuesuo.cn";   //测试环境：https://openapi.qiyuesuo.cn ; 正式环境：https://openapi.qiyuesuo.com
+            string accessSecret = "kAt5C7ibSuoZiM5ixOUP0NbjmSmkvX";
+            string accessToken = "v7Xb9KNogN";
+            string serverUrl = "https://openapi.qiyuesuo.me";   //测试环境：https://openapi.qiyuesuo.cn ; 正式环境：https://openapi.qiyuesuo.com
 
             SDKClient client = new SDKClient(accessToken, accessSecret, serverUrl);
 

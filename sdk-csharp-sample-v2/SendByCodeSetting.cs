@@ -54,6 +54,7 @@ namespace sdk_csharp_sample_v2
             SignAction sealAction = new SignAction("COMPANY", 1);
             sealAction.SealId = "2490828768980361630";
             platformSignatory.AddAction(sealAction);
+            contract.AddSignatory(platformSignatory);
 
             //添加个人签署方，并设置个人签署方需要上传的附件内容
             Signatory personalSignatory = new Signatory("PERSONAL", new User("邓茜茜", "15021504325", "MOBILE"), 2);
