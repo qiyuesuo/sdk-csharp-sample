@@ -19,9 +19,6 @@ namespace sdk_csharp_sample_v2
             // 利用业务分类配置进行公章签署（需配置签署位置以及签署印章）
             this.CompanySealSignByCategoryConfig(client, contract.Result.Id);
             Console.WriteLine("根据业务分类指定位置签署公章成功");
-            // 利用业务分类配置进行法人章签署（需配置签署位置以及法人章签署节点）
-            this.LpSignByCategoryConfig(client, contract.Result.Id);
-            Console.WriteLine("根据业务分类指定位置签署法人章成功");
             /**
 		      *  平台方签署完成，签署方签署可采用
 		      * （1）接收短信的方式登录契约锁云平台进行签署

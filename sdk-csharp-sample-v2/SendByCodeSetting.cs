@@ -26,9 +26,6 @@ namespace sdk_csharp_sample_v2
             //公司公章签署（若未指定位置，需指定位置签署）
             this.CompanySealSign(client, draft.Result.Id, fileAddResult.Result.DocumentId, templateAddResult.Result.DocumentId);
             Console.WriteLine("合同公章签署成功");
-            // 法人章签署（若未指定位置，需指定位置签署）
-            this.LpSign(client, draft.Result.Id, fileAddResult.Result.DocumentId, templateAddResult.Result.DocumentId);
-            Console.WriteLine("法人章签署完成");
             /**
 		      *  平台方签署完成，签署方签署可采用
 		      * （1）接收短信的方式登录契约锁云平台进行签署
@@ -57,9 +54,6 @@ namespace sdk_csharp_sample_v2
             SignAction sealAction = new SignAction("COMPANY", 1);
             sealAction.SealId = "2490828768980361630";
             platformSignatory.AddAction(sealAction);
-            // 法人章签署流程
-            platformSignatory.AddAction(new SignAction("LP", 2));
-            contract.AddSignatory(platformSignatory);
 
             //添加个人签署方，并设置个人签署方需要上传的附件内容
             Signatory personalSignatory = new Signatory("PERSONAL", new User("邓茜茜", "15021504325", "MOBILE"), 2);
@@ -147,7 +141,6 @@ namespace sdk_csharp_sample_v2
             string platformSignatoryId = null;
             string personalSignatoryId = null;
             string companyActionId = null;
-            string lpActionId = null;
             // 获取对应的ActionId与SignatoryId
             foreach (Signatory signatory in contract.Signatories)
             {
@@ -160,10 +153,6 @@ namespace sdk_csharp_sample_v2
                         if (action.Type.Equals("COMPANY"))
                         {
                             companyActionId = action.Id;
-                        }
-                        if (action.Type.Equals("LP"))
-                        {
-                            lpActionId = action.Id;
                         }
                     }
                 }
@@ -190,14 +179,6 @@ namespace sdk_csharp_sample_v2
             //sealStamper.OffsetX = 0.0;
             //sealStamper.OffsetY = 0.0;
 
-            Stamper lpStamper = new Stamper();
-            lpStamper.DocumentId = documentId1;
-            lpStamper.ActionId = lpActionId;
-            lpStamper.Type = "LP";
-            lpStamper.Page = 1;
-            lpStamper.OffsetX = 0.4;
-            lpStamper.OffsetY = 0.6;
-
             Stamper timeStamper = new Stamper();
             timeStamper.DocumentId = documentId1;
             timeStamper.ActionId = companyActionId;
@@ -216,7 +197,6 @@ namespace sdk_csharp_sample_v2
             personalStamper.OffsetY = 0.5;
 
             request.AddStamper(sealStamper);
-            request.AddStamper(lpStamper);
             request.AddStamper(timeStamper);
             request.AddStamper(personalStamper);
 
