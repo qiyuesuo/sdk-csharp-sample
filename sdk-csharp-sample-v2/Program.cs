@@ -1,4 +1,5 @@
 using QiyuesuoClient.Http;
+using System;
 
 namespace sdk_csharp_sample_v2
 {
@@ -6,8 +7,8 @@ namespace sdk_csharp_sample_v2
     {
         static void Main(string[] args)
         {
-            string accessSecret = "替换为开放平台SECRET";
-            string accessToken = "替换为开放平台TOKAN";
+            string accessSecret = "kAt5C7ibSuoZiM5ixOUP0NbjmSmkvX";
+            string accessToken = "v7Xb9KNogN";
             string serverUrl = "https://openapi.qiyuesuo.cn";   //测试环境：https://openapi.qiyuesuo.cn ; 正式环境：https://openapi.qiyuesuo.com
 
             SDKClient client = new SDKClient(accessToken, accessSecret, serverUrl);
@@ -19,8 +20,7 @@ namespace sdk_csharp_sample_v2
 
             SendByCodeSetting example = new SendByCodeSetting();
             example.Process(client);
-
-
+            Console.WriteLine("合同草稿创建成功");
         }
     }
 }
