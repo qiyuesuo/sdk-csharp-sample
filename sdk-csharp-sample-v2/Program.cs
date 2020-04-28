@@ -9,7 +9,7 @@ namespace sdk_csharp_sample_v2
         {
             string accessSecret = "替换为开放平台的SECRET";
             string accessToken = "替换为开放平台的TOKEN";
-            string serverUrl = "https://openapi.qiyuesuo.cn";   //测试环境：https://openapi.qiyuesuo.cn ; 正式环境：https://openapi.qiyuesuo.com
+            string serverUrl = "替换为开放平台请求地址";
 
             SDKClient client = new SDKClient(accessToken, accessSecret, serverUrl);
 
