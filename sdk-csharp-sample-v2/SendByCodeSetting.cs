@@ -86,7 +86,7 @@ namespace sdk_csharp_sample_v2
 
         private SdkResponse<DocumentAddResult> AddDocumentByFile(SDKClient client, string contractId)
         {
-            string path = "C:\\Users\\Richard Cheung\\Documents\\契约锁\\测试\\AA.pdf";   //待添加的文件路径
+            string path = "C:\\AA.pdf";   //待添加的文件路径
             Stream file = new FileStream(path, FileMode.Open);
             //指定文件名称，以及文件类型，比如此时的文件为pdf
             DocumentAddByFileRequest request = new DocumentAddByFileRequest(contractId, "根据文件添加文档", file, "pdf");
@@ -111,10 +111,10 @@ namespace sdk_csharp_sample_v2
 
         private SdkResponse<DocumentAddResult> AddDocumnetByTemplate(SDKClient client, string contractId)
         {
-            string templateId = "2492236993899110515";   //待添加的文件模板Id，合同模板请前往契约锁云平台维护
+            string templateId = "2492236993899110515";   //待添加的文件模板Id，合同模板请前往电子签章云平台维护
             DocumentAddByTemplateRequest request = new DocumentAddByTemplateRequest(contractId, "添加模板", templateId);
             // 如果文件模板为参数模板，添加参数内容
-            request.AddTemplateParam(new TemplateParam("接收方1", "契约锁"));
+            request.AddTemplateParam(new TemplateParam("接收方1", "电子签章"));
             request.AddTemplateParam(new TemplateParam("接收方2", "电子合同"));
 
             string response = null;
