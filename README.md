@@ -19,21 +19,14 @@ Installation
 
 Usage
 =====
+签署示例
+发起方通过接口发起合同签署合同，接收方登录契约锁云平台进行签署、或在生成的签署页面签署。
 
-#### 远程签
-将文件上传的开放平台进行签署，或者使用开放平台的模板进行签署。
+详情请参考：
 
-详情请参考： [RemoteSign.cs](https://github.com/qiyuesuo/sdk-csharp-sample/blob/master/sdk_csharp_sample/RemoteSign.cs)
+[SendByCodeSetting.cs] (https://github.com/qiyuesuo/sdk-csharp-sample/blob/master/sdk-csharp-sample-v2/SendByCodeSetting.cs).
 
-#### 标准签
-调用方通过接口发起或者签署合同，接收方通过短信、APP或者云平台登录契约锁完成签署。
-
-详情请参考： [StandardSign.cs](https://github.com/qiyuesuo/sdk-csharp-sample/blob/master/sdk_csharp_sample/StandardSign.cs)
-
-#### 本地签
-通过SDK提供该种签署服务，对接方将合同文件数据传入SDK，SDK对文件进行摘要运算，将摘要值发送到契约锁平台上进行签署。由于摘要运算是不可逆的，契约锁平台无法通过摘要值来获取合同的原文，从而实现了对接方合同隐私的保全。
-
-详情请参考： [LocalSign.cs](https://github.com/qiyuesuo/sdk-csharp-sample/blob/master/sdk_csharp_sample/LocalSign.cs)
+[SendByCategory.cs] (https://github.com/qiyuesuo/sdk-csharp-sample/blob/master/sdk-csharp-sample-v2/SendByCategory.cs).
 
 Notes
 =======
