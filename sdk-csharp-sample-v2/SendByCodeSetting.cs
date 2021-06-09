@@ -46,7 +46,7 @@ namespace sdk_csharp_sample_v2
             Contract contract = new Contract();
             contract.Subject = "合同主题名称";
             //添加平台方签署方
-            Signatory platformSignatory = new Signatory("COMPANY", new User("张忱昊", "17621699044", "MOBILE"), 1);
+            Signatory platformSignatory = new Signatory("COMPANY", new User("接收人", "10010001001", "MOBILE"), 1);
             platformSignatory.TenantName = "大头橙橙汁公司";//平台方公司名称
             //添加平台方签署流程，可根据需要调整
             //目前平台方签署流程为： （1）公章签署（2）法人章签署
@@ -57,8 +57,8 @@ namespace sdk_csharp_sample_v2
             contract.AddSignatory(platformSignatory);
 
             //添加个人签署方，并设置个人签署方需要上传的附件内容
-            Signatory personalSignatory = new Signatory("PERSONAL", new User("邓茜茜", "15021504325", "MOBILE"), 2);
-            personalSignatory.TenantName = "邓茜茜";//接收方名称
+            Signatory personalSignatory = new Signatory("PERSONAL", new User("个人用户", "10010001002", "MOBILE"), 2);
+            personalSignatory.TenantName = "个人用户";//接收方名称
             contract.AddSignatory(personalSignatory);
 
             //设置合同基本信息
@@ -367,7 +367,7 @@ namespace sdk_csharp_sample_v2
         {
             ContractPageRequest request = new ContractPageRequest();
             request.ContractId = contractId;                        //内嵌页面签署合同ID
-            request.User = new User("15021504325", "MOBILE");       //内嵌页面签署人信息
+            request.User = new User("10010001002", "MOBILE");       //内嵌页面签署人信息
             string response = null;
             try
             {
