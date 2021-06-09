@@ -54,11 +54,11 @@ namespace sdk_csharp_sample_v2
             draftContract.AddTemplateParam(new TemplateParam("接收方11", "发起方填参2"));
             draftContract.AddTemplateParam(new TemplateParam("接收方12", "发起方填参2"));
             //设置 合同接收方，该设置的合同接收方需要与业务分类配置的接收方流程一致
-            Signatory companySignatory = new Signatory("COMPANY", new User("17621699044", "MOBILE"), 1);
+            Signatory companySignatory = new Signatory("COMPANY", new User("10010001001", "MOBILE"), 1);
             companySignatory.TenantName = "大头橙橙汁公司";
             draftContract.AddSignatory(companySignatory);
-            Signatory personalSignatory = new Signatory("PERSONAL", new User("15021504325", "MOBILE"), 2);
-            personalSignatory.TenantName = "邓茜茜";
+            Signatory personalSignatory = new Signatory("PERSONAL", new User("10010001002", "MOBILE"), 2);
+            personalSignatory.TenantName = "个人用户";
             draftContract.AddSignatory(personalSignatory);
             draftContract.Send = true;  //设置发起默认发起，业务分类中必须要有可用的签署文件
 
@@ -134,7 +134,7 @@ namespace sdk_csharp_sample_v2
         {
             ContractPageRequest request = new ContractPageRequest();
             request.ContractId = contractId;
-            request.User = new User("15021504325", "MOBILE");
+            request.User = new User("10010001002", "MOBILE");
             string response = null;
             try
             {
